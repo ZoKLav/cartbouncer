@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Cart Bouncer</title><link rel="stylesheet" href="ui.css"></head>
+<body class="popup">
+<main>
+  <header class="masthead">
+    <img src="icons/icon-128.png" class="mascot" alt="Cart Bouncer shopping bag mascot">
+    <div class="brandhead"><span class="eyebrow">SHOPPING, MINUS THE NONSENSE</span><h1>Cart Bouncer</h1><p>Unwanted listings? Not on the list.</p></div>
+    <label class="toggle" title="Enable Cart Bouncer"><input id="enabled" type="checkbox" aria-label="Filtering enabled"><span class="toggle-track"></span></label>
+  </header>
+  <div class="statusbar"><span><span class="status-dot"></span><span id="statusText">Checking the door…</span></span><button type="button" class="textbutton" id="recheck">Recheck page</button></div>
+  <section class="compact-features" aria-label="Quick filters">
+    <div class="feature-row"><div><strong>Minimum product rating</strong><span>Below this? Straight out.</span></div><select id="minStars" aria-label="Minimum product rating"><option value="0">Off</option><option value="1">1.0 ★</option><option value="1.5">1.5 ★</option><option value="2">2.0 ★</option><option value="2.5">2.5 ★</option><option value="3">3.0 ★</option><option value="3.5">3.5 ★</option><option value="4">4.0 ★</option><option value="4.5">4.5 ★</option></select></div>
+    <label class="feature-row checkrow"><span><strong>Hide unrated products</strong><small>Unknown ≠ automatically awful</small></span><input type="checkbox" id="hideUnrated"></label>
+    <label class="feature-row checkrow"><span><strong>50-seller watchlist</strong><small>Optional, data-based, US marketplace</small></span><input type="checkbox" id="watchlistEnabled"></label>
+  </section>
+  <nav class="tabs" aria-label="Popup menu"><button class="active" data-tab="add" aria-selected="true">Quick add</button><button data-tab="lists" aria-selected="false">Your lists</button><button data-tab="more" aria-selected="false">More</button></nav>
+  <div id="panel-add" class="tabpanel">
+    <label class="fieldlabel" for="quickType">What gets the boot?</label>
+    <form id="quickForm" class="quickform"><select id="quickType" aria-label="Rule type"><option value="brandNames">Brand</option><option value="sellerIds">Seller ID</option><option value="keywords">Keyword</option></select><input type="text" id="quickInput" required placeholder="e.g. AVIDLOVE" aria-label="New blocked item"><button type="submit">Block</button></form>
+    <div class="mini-note">Seller IDs are not the same thing as store names. Use Brand for names appearing in product titles.</div>
+  </div>
+  <div id="panel-lists" class="tabpanel" hidden>
+    <div class="listheading">Brands <span id="brandCount" class="count"></span></div><ul id="brandList" class="chips"></ul>
+    <div class="listheading">Seller IDs <span id="sellerCount" class="count"></span></div><ul id="sellerList" class="chips"></ul>
+    <div class="listheading">Keywords <span id="keywordCount" class="count"></span></div><ul id="keywordList" class="chips"></ul>
+  </div>
+  <div id="panel-more" class="tabpanel" hidden>
+    <label class="feature-row checkrow"><span><strong>Look up seller details</strong><small>Extra Amazon product-page requests</small></span><input type="checkbox" id="deepCheck"></label>
+    <p class="mini-note">The 50-seller list matches actual seller names where identifiable—not product brands. Its source is visible in settings.</p>
+  </div>
+  <p id="message" class="message" role="status"></p>
+  <footer><span class="footer-note">Your search, your rules.</span><button id="options" type="button" class="secondary">Full settings <span aria-hidden="true">↗</span></button></footer>
+</main>
+<script src="watchlist.js"></script><script src="ui.js"></script>
+</body></html>

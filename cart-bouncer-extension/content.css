@@ -1,0 +1,9 @@
+/* A tiny pre-paint curtain on Amazon result tiles. No network request is stopped. */
+html:not([data-alf-disabled]) [data-component-type="s-search-result"][data-asin]:not([data-alf-reviewed="yes"]),
+html:not([data-alf-disabled]) .s-main-slot .s-result-item[data-asin]:not([data-alf-reviewed="yes"]),
+html:not([data-alf-disabled]) .s-main-slot [data-component-type="sp-sponsored-result"]:not([data-alf-reviewed="yes"]),
+html:not([data-alf-disabled]) .s-main-slot .VIDEO_SINGLE_PRODUCT:not([data-alf-reviewed="yes"]),
+html:not([data-alf-disabled]) .s-main-slot [data-csa-c-painter*="featured-brand"]:not([data-alf-reviewed="yes"]),
+html:not([data-alf-disabled]) .s-main-slot [cel_widget_id*="featured-brands"]:not([data-alf-reviewed="yes"]),
+html:not([data-alf-disabled]) .s-main-slot [id*="CardInstance"][class*="sb-desktop"]:not([data-alf-reviewed="yes"]) {visibility:hidden !important;}
+html [data-alf-blocked="yes"] {display:none !important;}
