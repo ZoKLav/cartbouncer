@@ -1,4 +1,4 @@
-## Cart Bouncer — Amazon Filter
+## Cart Bouncer - Amazon Filter
 
 ## Detailed description
 
